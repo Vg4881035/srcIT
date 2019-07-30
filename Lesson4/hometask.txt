@@ -1,0 +1,18 @@
+#id;firstName;lastName;email;password;birthdayYear
+1;Ivan;Ivanov;ivan@mail.com;qwerty;1991
+2;Petr1;Petrov;pere@mail.com;qwerty1$;1986
+3;Vasiliy;Vasiliev;badEmail;qwerty1$;1973
+4;Alex;Alexov3;alex@email.com;qwerty1$;1999
+5;Oleg;Artemov;oleg@email.com;qwerty1$;1365
+6;Ira;Krasnova;ira@email.com;qwerty1$;1990
+#
+#
+# Написать слабосвязанную программу для работы с юзерами:
+#    Интерфейс UserRetriever говорит о том что он может вытягивать откуда-то информацию о юзерах
+#    Наши данные храняться в файле, поэтому UserRetrieverImpl должен уметь работать с файлом
+# 1. UserRetrieverImpl должен уметь построчно считывать файл hometask.txt, пропуская строки, которые начинаются с символа #
+#    Интерфейс UserConverter - это интерфейс который умеет превращать строку в реальную модель.
+# 2. Соответственно наш UserConverterImpl будет конвертировать csv формат в User.
+# 3. UserValidatorImpl умеет проверять на валидность данные User на основании регулярных выражений. И в случае ошибки возвращать enum ErrorType конкретной ошибки или null если всё ок.
+# 4. ErrorType будет содержать поле с текстом ошибки понятной для пользователя.
+# 5. UserServiceImpl просто делегирует вызов функций на UserRetriever и UserValidator, только этот класс будет использоваться в Demo
